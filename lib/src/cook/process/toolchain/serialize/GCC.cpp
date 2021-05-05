@@ -27,6 +27,7 @@ namespace cook { namespace process { namespace toolchain { namespace serialize {
             kv.append(Part.Pre, "-O3")
         } else if (k == "config" && v == "rtc") {
             kv.append(Part.Pre, "-fsanitize", "address")
+            kv.append(Part.Pre, "-fsanitize", "undefined")
             kv.append(Part.Pre, "-fno-omit-frame-pointer")
         } else if (k == "config" && v == "profile") {
             kv.append(Part.Pre, "-pg")
@@ -87,6 +88,7 @@ namespace cook { namespace process { namespace toolchain { namespace serialize {
             kv.append(Part.Pre, "-arch arm64", "")
         } else if (k == "config" && v == "rtc") {
             kv.append(Part.Pre, "-fsanitize", "address") 
+            kv.append(Part.Pre, "-fsanitize", "undefined")
         } else if (k == "config" && v == "profile") {
             kv.append(Part.Pre, "-pg", ""))%";
         if (gcc_variant == GCCVariant::Genuine)
